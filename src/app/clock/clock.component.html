@@ -2,7 +2,6 @@
     <div class="clock">
       <div class="time-display">
         <div class="time-part">
-          <!-- Botones de incremento -->
           <button class="increment" (click)="incrementHour()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6" width="40" height="40">
               <path fill-rule="evenodd" d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
@@ -22,8 +21,6 @@
           </button>
           <span class="time">{{ currentTime.second | number: '2.0' }}</span>
         </div>
-        
-        <!-- Botones de decremento -->
         <div class="time-part">
           <button class="decrement" (click)="decrementHour()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -44,63 +41,52 @@
       </div>
     </div>
   
-    <!-- Dropdown para seleccionar el estilo del reloj -->
     <div *ngIf="selectedClockStyle === 'style1'" class="time-display">
-        <div class="time-part">
-          <button class="increment" (click)="incrementHour()">↑</button>
-          <span class="time">{{ currentTime.hour | number: '2.0' }}</span>
-          <button class="increment" (click)="incrementMinute()">↑</button>
-          <span class="time">{{ currentTime.minute | number: '2.0' }}</span>
-          <button class="increment" (click)="incrementSecond()">↑</button>
-          <span class="time">{{ currentTime.second | number: '2.0' }}</span>
-        </div>
-  
-        <div class="time-part">
-          <button class="decrement" (click)="decrementHour()">↓</button>
-          <button class="decrement" (click)="decrementMinute()">↓</button>
-          <button class="decrement" (click)="decrementSecond()">↓</button>
-        </div>
+      <div class="time-part">
+        <button class="increment" (click)="incrementHour()">↑</button>
+        <span class="time">{{ currentTime.hour | number: '2.0' }}</span>
+        <button class="increment" (click)="incrementMinute()">↑</button>
+        <span class="time">{{ currentTime.minute | number: '2.0' }}</span>
+        <button class="increment" (click)="incrementSecond()">↑</button>
+        <span class="time">{{ currentTime.second | number: '2.0' }}</span>
       </div>
-  
-      <!-- Estilo 2: Mostrar los cuadrados, triángulos y círculos solo cuando el estilo es 'style2' -->
-      <div *ngIf="selectedClockStyle === 'style2'" class="time-container">
-        <!-- Para las horas (cuadrados) -->
-        <div class="time">
-          <div class="jarra">
-            <div class="square" *ngFor="let _ of squares"></div>
-          </div>
-          <div class="time-unit-label">Horas</div>
-          <button (click)="incrementHour()">↑</button>
-          <button (click)="decrementHour()">↓</button>
-        </div>
-  
-        <!-- Para los minutos (triángulos) -->
-        <div class="time">
-          <div class="jarra">
-            <div class="triangle" *ngFor="let _ of triangles"></div>
-          </div>
-          <div class="time-unit-label">Minutos</div>
-          <button (click)="incrementMinute()">↑</button>
-          <button (click)="decrementMinute()">↓</button>
-        </div>
-  
-        <!-- Para los segundos (círculos) -->
-        <div class="time">
-          <div class="jarra">
-            <div class="circle" *ngFor="let _ of circles"></div>
-          </div>
-          <div class="time-unit-label">Segundos</div>
-          <button (click)="incrementSecond()">↑</button>
-          <button (click)="decrementSecond()">↓</button>
-        </div>
+      <div class="time-part">
+        <button class="decrement" (click)="decrementHour()">↓</button>
+        <button class="decrement" (click)="decrementMinute()">↓</button>
+        <button class="decrement" (click)="decrementSecond()">↓</button>
       </div>
     </div>
   
-    <!-- Dropdown para cambiar el estilo del reloj -->
-    <select [(ngModel)]="selectedClockStyle" (change)="onStyleChange()">
-      <option value="style1">Estilo 1</option>
-      <option value="style2">Estilo 2</option>
-    </select>
+    <div *ngIf="selectedClockStyle === 'style2'" class="time-container">
+      <div class="time">
+        <div class="jarra">
+          <div class="square" *ngFor="let _ of squares"></div>
+        </div>
+        <div class="time-unit-label">Horas</div>
+        <button (click)="incrementHour()">↑</button>
+        <button (click)="decrementHour()">↓</button>
+      </div>
+      <div class="time">
+        <div class="jarra">
+          <div class="triangle" *ngFor="let _ of triangles"></div>
+        </div>
+        <div class="time-unit-label">Minutos</div>
+        <button (click)="incrementMinute()">↑</button>
+        <button (click)="decrementMinute()">↓</button>
+      </div>
+      <div class="time">
+        <div class="jarra">
+          <div class="circle" *ngFor="let _ of circles"></div>
+        </div>
+        <div class="time-unit-label">Segundos</div>
+        <button (click)="incrementSecond()">↑</button>
+        <button (click)="decrementSecond()">↓</button>
+      </div>
+    </div>
+  </div>
   
-  
+  <select [(ngModel)]="selectedClockStyle" (change)="onStyleChange()">
+    <option value="style1">Estilo 1</option>
+    <option value="style2">Estilo 2</option>
+  </select>
   

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service'; // Asegúrate de importar AuthService
+import { AuthService } from '../auth.service'; 
 
 @Component({
   selector: 'app-login',
@@ -13,11 +13,10 @@ export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  // Función para iniciar sesión
   login() {
     if (this.authService.login(this.username, this.password)) {
       console.log('Inicio de sesión exitoso');
-      this.router.navigate(['/clock']); // Redirigir al reloj después de iniciar sesión
+      this.router.navigate(['/clock']); 
     } else {
       alert('Usuario o contraseña incorrectos');
     }

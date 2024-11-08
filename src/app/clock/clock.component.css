@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Asegura que los botones y la hora estén apilados */
+    flex-direction: column;
     font-size: 3rem;
     margin: 20px;
     margin-left: 250px;
@@ -21,12 +21,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Espacio entre la hora y los botones */
+    margin-bottom: 20px;
   }
   
   .time-part {
     display: inline-block;
-    margin:  10px;
+    margin: 10px;
   }
   
   .increment,
@@ -48,18 +48,17 @@
     margin-top: 20px;
   }
   
-  /* Estilos para botones de incremento y decremento */
   .increment {
     position: relative;
-    top: -40px; 
+    top: -40px;
     left: 54px;
   }
   
   .decrement {
     position: relative;
-    bottom: -30px; 
+    bottom: -30px;
     right: 346px;
-    margin-left: 60px;/* Empuja los botones hacia abajo */
+    margin-left: 60px;
   }
   
   .time {
@@ -69,23 +68,23 @@
     justify-content: center;
   }
   
- /* Jarra que contiene las figuras */
-.jarra {
+  .jarra {
     width: 150px;
     height: 300px;
-    position: relative; /* Asegura que los elementos se posicionen dentro del contenedor */
+    position: relative;
     overflow: hidden;
     border: 2px solid black;
     display: flex;
     flex-direction: column-reverse;
   }
   
-  /* Estilos generales para las figuras */
-  .square, .triangle, .circle {
+  .square,
+  .triangle,
+  .circle {
     position: absolute;
     bottom: 0;
-    transition: all 1s ease-in-out;  /* Transición suave para las animaciones */
-    animation: fall 1s ease-in-out forwards; /* La animación "caer" */
+    transition: all 1s ease-in-out;
+    animation: fall 1s ease-in-out forwards;
   }
   
   .square {
@@ -109,7 +108,6 @@
     background-color: red;
   }
   
-  /* Animación para la caída de las figuras */
   @keyframes fall {
     0% {
       opacity: 0;
