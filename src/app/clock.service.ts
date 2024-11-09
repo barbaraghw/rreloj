@@ -1,24 +1,20 @@
-
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ClockService {
-  private currentTime: string = this.getCurrentTime();
+  private currentTimeSubject = new BehaviorSubject<Date>(new Date());
+  public currentTime$ = this.currentTimeSubject.asObservable();
 
-  constructor() {}
-
-  getCurrentTime() {
-    const now = new Date();
-    return now.toLocaleTimeString();
+  constructor() {
+    setInterval(() => {
+      this.currentTimeSubject.next(new Date());
+    }, 1000);
   }
 
-  setCustomTime(time: string) {
-    this.currentTime = time;
-  }
-
-  getTime() {
-    return this.currentTime;
+  getTime(): Date {
+    return this.currentTimeSubject.getValue();
   }
 }

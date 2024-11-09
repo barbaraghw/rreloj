@@ -1,0 +1,17 @@
+.style-selector {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #clockStyle {
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .clock {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  

@@ -1,121 +1,29 @@
-.clock-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 3rem;
-    margin: 20px;
-    margin-left: 250px;
-  }
-  
-  .time-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .time-part {
-    display: inline-block;
-    margin: 10px;
-  }
-  
-  .increment,
-  .decrement {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-  }
-  
-  .size-6 {
-    width: 24px;
-    height: 24px;
-    fill: #000;
-  }
-  
-  select {
-    margin-top: 20px;
-  }
-  
-  .increment {
-    position: relative;
-    top: -40px;
-    left: 54px;
-  }
-  
-  .decrement {
-    position: relative;
-    bottom: -30px;
-    right: 346px;
-    margin-left: 60px;
-  }
-  
-  .time {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .jarra {
-    width: 150px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  
-  .square,
-  .triangle,
-  .circle {
-    position: absolute;
-    bottom: 0;
-    transition: all 1s ease-in-out;
-    animation: fall 1s ease-in-out forwards;
-  }
-  
-  .square {
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-  }
-  
-  .triangle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid green;
-  }
-  
-  .circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-  }
-  
-  @keyframes fall {
-    0% {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  margin: 2px;
+  display: inline-block;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #e74c3c;
+  display: inline-block;
+  margin: 2px;
+}
+
+.clock {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.figures-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

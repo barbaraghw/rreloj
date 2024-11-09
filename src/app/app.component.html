@@ -1,3 +1,13 @@
-<div>
-  <router-outlet></router-outlet> 
+<div class="style-selector">
+  <label for="clockStyle">Seleccionar reloj:</label>
+  <select id="clockStyle" (change)="onClockChange($event)" [value]="selectedClock">
+    <option value="clock1">Reloj Cuadrados y Triángulos</option>
+    <option value="clock2">Reloj con Letras</option>
+    <option value="clock3">Reloj con Palabras</option>
+    <option value="clock4">Reloj con Colores</option>
+    <option value="clock5">Reloj con Puntos</option>
+  </select>
 </div>
+
+<!-- Componente de reloj seleccionado -->
+<router-outlet></router-outlet>

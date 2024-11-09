@@ -1,0 +1,8 @@
+<div class="clock">
+    <h2>Hora: {{ currentTime | date: 'HH:mm' }}</h2>
+    <div class="figures-container">
+      <div *ngFor="let square of squares" class="square"></div>
+      <div *ngFor="let triangle of triangles" class="triangle"></div>
+    </div>
+  </div>
+  

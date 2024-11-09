@@ -1,0 +1,21 @@
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9b59b6;
+    margin: 2px;
+  }
+  
+  .clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .time-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
