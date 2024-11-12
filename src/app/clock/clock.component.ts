@@ -1,22 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ClockService } from '../clock.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.css']
 })
-export class ClockComponent implements OnInit {
-  selectedClockStyle: string = 'clock1'; // Valor por defecto
+export class ClockComponent implements OnInit, OnDestroy {
+  currentTime: Date = new Date();
+  clockSubscription: Subscription | undefined;
+  timeToAdd: number = 0;
 
-  constructor(private router: Router, private clockService: ClockService) {}
+  constructor(private clockService: ClockService) {}
 
-  ngOnInit(): void {}
-
-  onStyleChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.selectedClockStyle = selectElement.value;
-    this.router.navigate([`/clock/${this.selectedClockStyle}`]); // Redirige a la ruta seleccionada
+  ngOnInit(): void {
+    this.clockSubscription = this.clockService.getCurrentTime().subscribe(time => {
+      this.currentTime = time;
+    });
   }
-}  
+
+  ngOnDestroy(): void {
+    this.clockSubscription?.unsubscribe();
+  }
+
+  increaseTime(minutes: number): void {
+    this.timeToAdd += minutes;
+    const newTime = new Date(this.currentTime.getTime());
+    newTime.setMinutes(newTime.getMinutes() + minutes);
+    this.clockService.setTime(newTime);
+  }
+
+  modifyTime(minutes: number): void {
+    this.clockService.modifyTime(minutes);
+  }
+
+  stopClock(): void {
+    this.clockService.stopClock();
+  }
+
+  startClock(): void {
+    this.clockService.startClockAgain();
+  }
+}

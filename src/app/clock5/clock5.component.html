@@ -1,9 +1,26 @@
-<div class="clock">
-    <div class="time-display">
-      <div *ngFor="let point of pointsForHour" class="point"></div>
-    </div>
-    <div class="time-display">
-      <div *ngFor="let point of pointsForMinute" class="point"></div>
-    </div>
+<div clock5-container>
+  <div class="neon-clock">
+    <span>{{ currentTime | date: 'HH' }}</span>:<span>{{ currentTime | date: 'mm' }}</span>:<span>{{ currentTime | date: 'ss' }}</span>
   </div>
   
+  <div class="progress-bar">
+    <label>Day Progress</label>
+    <div class="progress" [style.width]="dayPercentage + '%'"></div>
+  </div>
+
+  <div class="progress-bar">
+    <label>Minute Progress</label>
+    <div class="progress" [style.width]="minutePercentage + '%'"></div>
+  </div>
+
+  <div class="progress-bar">
+    <label>Second Progress</label>
+    <div class="progress" [style.width]="secondPercentage + '%'"></div>
+  </div>
+
+  <div class="controls">
+    <button (click)="modifyTime('hours', 1)">+1 Hour</button>
+    <button (click)="modifyTime('minutes', 1)">+1 Minute</button>
+    <button (click)="modifyTime('seconds', 1)">+1 Second</button>
+  </div>
+</div>

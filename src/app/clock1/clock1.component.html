@@ -1,8 +1,41 @@
-<div class="clock">
-    <h2>Hora: {{ currentTime | date: 'HH:mm' }}</h2>
-    <div class="figures-container">
+<div class="clock-containeer">
+  <h2>Hora: {{ currentTime | date: 'HH:mm:ss' }}</h2>
+  <div class="time-controls">
+    <button (click)="modifyTime('hours', 1)">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <button (click)="modifyTime('minutes', 1)">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <button (click)="modifyTime('seconds', 1)">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    
+  <div class="figures-container">
+    <div class="square-container">
       <div *ngFor="let square of squares" class="square"></div>
+    </div>
+
+    <div class="triangle-container">
       <div *ngFor="let triangle of triangles" class="triangle"></div>
     </div>
+
+    <div class="circle-container">
+      <div *ngFor="let circle of circles" class="circle"></div>
+    </div>
   </div>
-  
+
+
+    
+    <button (click)="modifyTime('hours', -1)">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+    <button (click)="modifyTime('minutes', -1)">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+   
+    <button (click)="modifyTime('seconds', -1)"> 
+       <i class="fa-solid fa-angle-down"></i>
+    </button>
+  </div>
+</div>

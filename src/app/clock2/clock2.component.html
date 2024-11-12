@@ -1,4 +1,40 @@
-<div class="clock">
-    <h2>{{ letterForHour }} : {{ letterForMinute }}</h2>
+<div>
+  <h2>{{ currentTime | date: 'HH:mm:ss' }}</h2>
+
+  <div class="time-controls">
+    <button (click)="modifyTime('hours', 1)">
+      <i class="fa-solid fa-angle-up"></i> Hora +
+    </button>
+    <button (click)="modifyTime('minutes', 1)">
+      <i class="fa-solid fa-angle-up"></i> Minuto +
+    </button>
+    <button (click)="modifyTime('seconds', 1)">
+      <i class="fa-solid fa-angle-up"></i> Segundo +
+    </button>
+
+    <button (click)="modifyTime('hours', -1)">
+      <i class="fa-solid fa-angle-down"></i> Hora -
+    </button>
+    <button (click)="modifyTime('minutes', -1)">
+      <i class="fa-solid fa-angle-down"></i> Minuto -
+    </button>
+    <button (click)="modifyTime('seconds', -1)">
+      <i class="fa-solid fa-angle-down"></i> Segundo -
+    </button>
   </div>
-  
+
+  <div class="morse-code-container">
+    <h3></h3>
+    <p>{{ morseTime }}</p>
+  </div>
+
+  <div class="morse-guide-container">
+    <h3>Guía de Código Morse (1-9):</h3>
+    <ul>
+      <li *ngFor="let key of objectKeys(morseGuide)">
+        <strong>{{ key }}</strong>
+        <span>{{ morseGuide[key] }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

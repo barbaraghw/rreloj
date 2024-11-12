@@ -1,5 +1,40 @@
-<div class="clock">
-    <h2 [style.color]="colorForHour">{{ currentTime.getHours() }}</h2>
-    <h2 [style.color]="colorForMinute">{{ currentTime.getMinutes() }}</h2>
+<div>
+  <div class="time-map">
+    <h3>Horas</h3>
+    <div class="map">
+      <div *ngFor="let hour of hours" 
+           [class.selected]="hour === selectedHour" 
+           class="time-unit">
+        {{ hour }}
+      </div>
+    </div>
   </div>
-  
+
+  <div class="time-map">
+    <h3>Minutos</h3>
+    <div class="map">
+      <div *ngFor="let minute of minutes" 
+           [class.selected]="minute === selectedMinute" 
+           class="time-unit">
+        {{ minute }}
+      </div>
+    </div>
+  </div>
+
+  <div class="time-map">
+    <h3>Segundos</h3>
+    <div class="map">
+      <div *ngFor="let second of seconds" 
+           [class.selected]="second === selectedSecond" 
+           class="time-unit">
+        {{ second }}
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button (click)="modifyTime('hours', 1)">Incrementar hora</button>
+    <button (click)="modifyTime('minutes', 1)">Incrementar minuto</button>
+    <button (click)="modifyTime('seconds', 1)">Incrementar segundo</button>
+  </div>
+</div>

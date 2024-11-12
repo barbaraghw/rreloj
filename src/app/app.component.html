@@ -1,13 +1,20 @@
-<div class="style-selector">
-  <label for="clockStyle">Seleccionar reloj:</label>
-  <select id="clockStyle" (change)="onClockChange($event)" [value]="selectedClock">
-    <option value="clock1">Reloj Cuadrados y Triángulos</option>
-    <option value="clock2">Reloj con Letras</option>
-    <option value="clock3">Reloj con Palabras</option>
-    <option value="clock4">Reloj con Colores</option>
-    <option value="clock5">Reloj con Puntos</option>
-  </select>
-</div>
+<div class="page-container">
+  <div class="dropdown-container">
+    <select [(ngModel)]="selectedClock" class="dropdown">
+      <option *ngFor="let clock of clockOptions" [value]="clock">{{ clock }}</option>
+    </select>
+  </div>
 
-<!-- Componente de reloj seleccionado -->
-<router-outlet></router-outlet>
+  <div class="clock-container">
+    <app-clock1 *ngIf="selectedClock === 'Clock 1'"></app-clock1>
+    <app-clock2 *ngIf="selectedClock === 'Clock 2'"></app-clock2>
+    <app-clock3 *ngIf="selectedClock === 'Clock 3'"></app-clock3>
+    <app-clock4 *ngIf="selectedClock === 'Clock 4'"></app-clock4>
+    <app-clock5 *ngIf="selectedClock === 'Clock 5'"></app-clock5>
+    <app-clock6 *ngIf="selectedClock === 'Clock 6'"></app-clock6>
+    <app-clock7 *ngIf="selectedClock === 'Clock 7'"></app-clock7>
+    <app-clock8 *ngIf="selectedClock === 'Clock 8'"></app-clock8>
+    <app-clock9 *ngIf="selectedClock === 'Clock 9'"></app-clock9>
+    <app-clock10 *ngIf="selectedClock === 'Clock 10'"></app-clock10>
+  </div>
+</div>

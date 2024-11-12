@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Para la navegación
 
 @Component({
   selector: 'app-root',
@@ -7,14 +6,10 @@ import { Router } from '@angular/router';  // Para la navegación
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedClock: string = 'clock1';  // Valor por defecto (Reloj 1)
-
-  constructor(private router: Router) {}
-
-  // Este método cambia la ruta cuando el usuario selecciona un reloj
-  onClockChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.selectedClock = selectElement.value;
-    this.router.navigate([this.selectedClock]);  // Navegar a la ruta correspondiente
-  }
+  selectedClock: string = 'Clock 1'; 
+  clockOptions: string[] = [
+    'Clock 1', 'Clock 2', 'Clock 3', 'Clock 4', 'Clock 5',
+    'Clock 6', 'Clock 7', 'Clock 8', 'Clock 9', 'Clock 10'
+  ]; 
+  constructor() { }
 }

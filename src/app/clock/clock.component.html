@@ -1,13 +1,16 @@
-<div class="style-selector">
-  <label for="clockStyle">Seleccionar estilo:</label>
-  <select id="clockStyle" (change)="onStyleChange($event)" [value]="selectedClockStyle">
-    <option value="clock1">Estilo Cuadrados y Triángulos</option>
-    <option value="clock2">Estilo Letras</option>
-    <option value="clock3">Estilo Palabras</option>
-    <option value="clock4">Estilo Colores</option>
-    <option value="clock5">Estilo Puntos</option>
-  </select>
-</div>
 
-<!-- Contenedor para el reloj seleccionado -->
-<router-outlet></router-outlet>
+<div class="clock-container">
+  <h2>Hora Actual: {{ currentTime | date:'mediumTime' }}</h2>
+
+  <div>
+    <button (click)="modifyTime(-15)">Restar 15 min</button>
+    <button (click)="modifyTime(15)">Sumar 15 min</button>
+    <button (click)="increaseTime(30)">Sumar 30 min</button>
+    <button (click)="increaseTime(-30)">Restar 30 min</button>
+  </div>
+
+  <div>
+    <button (click)="stopClock()">Detener reloj</button>
+    <button (click)="startClock()">Iniciar reloj</button>
+  </div>
+</div>
