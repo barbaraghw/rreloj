@@ -1,0 +1,63 @@
+.clock-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .binary-display {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-right: 160px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .binary-time {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .bit {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #753e3e;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .bit.on {
+    background-color: #f39c12;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 5px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  

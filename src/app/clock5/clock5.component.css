@@ -20,28 +20,29 @@
     0 0 30px #ff00ff, 
     0 0 35px #ff00ff;  
   animation: neonGlow 1.5s ease-in-out infinite alternate;
+  margin-bottom: 20px;
 }
 
 @keyframes neonGlow {
   0% {
     text-shadow:
       0 0 5px #fff, 
-      0 0 10px #ff00ff, 
-      0 0 15px #ff00ff, 
-      0 0 20px #ff00ff, 
-      0 0 30px #ff00ff, 
-      0 0 40px #ff00ff, 
-      0 0 50px #ff00ff;
+      0 0 10px #f39c12, 
+      0 0 15px #f39c12, 
+      0 0 20px #f39c12, 
+      0 0 30px #f39c12, 
+      0 0 40px #f39c12, 
+      0 0 50px #f39c12;
   }
   100% {
     text-shadow:
       0 0 5px #fff, 
-      0 0 10px #00ff00, 
-      0 0 15px #00ff00, 
-      0 0 20px #00ff00, 
-      0 0 30px #00ff00, 
-      0 0 40px #00ff00, 
-      0 0 50px #00ff00;
+      0 0 10px #ff0000, 
+      0 0 15px #ff0000, 
+      0 0 20px #ff0000, 
+      0 0 30px #ff0000, 
+      0 0 40px #ff0000, 
+      0 0 50px #ff0000;
   }
 }
 
@@ -52,6 +53,7 @@
   background-color: #444;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .progress-bar label {
@@ -62,7 +64,7 @@
 
 .progress {
   height: 10px;
-  background-color: #ff00ff;
+  background-color: #f39c12;
   width: 0%;
   transition: width 1s ease-in-out;
   border-radius: 5px;
@@ -76,7 +78,7 @@
 }
 
 button {
-  background-color: #ff00ff;
+  background-color: #f39c12;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -88,5 +90,5 @@ button {
 }
 
 button:hover {
-  background-color: #00ff00;
+  background-color: #ff3c00;
 }

@@ -1,1 +1,17 @@
-<p>clock8 works!</p>
+<div class="clock-container">
+    <div class="ticker-container">
+      <span class="ticker-text">{{ time }}</span>
+    </div>
+  
+    <div class="controls">
+      <button (click)="incrementHours()">Incrementar Hora</button>
+      <button (click)="decrementHours()">Decrementar Hora</button>
+  
+      <button (click)="incrementMinutes()">Incrementar Minutos</button>
+      <button (click)="decrementMinutes()">Decrementar Minutos</button>
+  
+      <button (click)="incrementSeconds()">Incrementar Segundos</button>
+      <button (click)="decrementSeconds()">Decrementar Segundos</button>
+    </div>
+  </div>
+  

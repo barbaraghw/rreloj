@@ -4,6 +4,7 @@
   background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: -100px;
 }
 
 h2 {
@@ -18,17 +19,21 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 160px;
+  margin-left: 30px;
 }
 
 button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #3498db;
+  background-color: #f39c12;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 50px;
+  margin:10px;
 }
 
 button:hover {

@@ -1,1 +1,34 @@
-<p>clock7 works!</p>
+<div class="clock-wrapper">
+    <div class="binary-display">
+      <div class="section">
+        <h3>Horas</h3>
+        <div class="binary-time">
+          <div *ngFor="let bit of binaryTime.split(':')[0].split('')" 
+               class="bit" [ngClass]="{'on': bit === '1'}"></div>
+        </div>
+        <button (click)="incrementHours()">+ Hora</button>
+        <button (click)="decrementHours()">- Hora</button>
+      </div>
+  
+      <div class="section">
+        <h3>Minutos</h3>
+        <div class="binary-time">
+          <div *ngFor="let bit of binaryTime.split(':')[1].split('')" 
+               class="bit" [ngClass]="{'on': bit === '1'}"></div>
+        </div>
+        <button (click)="incrementMinutes()">+ Minuto</button>
+        <button (click)="decrementMinutes()">- Minuto</button>
+      </div>
+  
+      <div class="section">
+        <h3>Segundos</h3>
+        <div class="binary-time">
+          <div *ngFor="let bit of binaryTime.split(':')[2].split('')" 
+               class="bit" [ngClass]="{'on': bit === '1'}"></div>
+        </div>
+        <button (click)="incrementSeconds()">+ Segundo</button>
+        <button (click)="decrementSeconds()">- Segundo</button>
+      </div>
+    </div>
+  </div>
+  

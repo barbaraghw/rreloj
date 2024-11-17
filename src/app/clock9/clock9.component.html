@@ -1,1 +1,17 @@
-<p>clock9 works!</p>
+<div class="clock-container" [style.backgroundColor]="backgroundColor">
+    <div class="time-display">
+      <span>{{ time }}</span> 
+    </div>
+    <div class="rgb-display">
+      <span>{{ rgb }}</span> <
+  
+    <div class="controls">
+      <button (click)="incrementHour()">+ Hour</button>
+      <button (click)="decrementHour()">- Hour</button>
+      <button (click)="incrementMinute()">+ Minute</button>
+      <button (click)="decrementMinute()">- Minute</button>
+      <button (click)="incrementSecond()">+ Second</button>
+      <button (click)="decrementSecond()">- Second</button>
+    </div>
+  </div>
+  

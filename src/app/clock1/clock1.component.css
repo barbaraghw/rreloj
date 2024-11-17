@@ -7,7 +7,7 @@ button {
   padding: 10px 20px;
   font-size: 10px;
   width: 100px;
-  background-color: #3498db;
+  background-color: #f39c12;
   color: white;
   border: none;
   border-radius: 5px;
@@ -16,14 +16,14 @@ button {
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #c4d430;
 }
 h2 {
   font-size: 3rem; 
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
-  margin-left: 440px;
+  margin-left: 360px;
 }
 .figures-container {
   display: flex;

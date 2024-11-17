@@ -1,1 +1,40 @@
-<p>clock10 works!</p>
+<div class="clock-containerr">
+    <div class="time-display">{{ time }}</div>
+  
+    <div class="circle-container">
+      <svg class="circle" viewBox="0 0 100 100">
+        <circle class="circle-background" cx="50" cy="50" r="45" />
+        <circle class="circle-progress" cx="50" cy="50" r="45" [style.strokeDashoffset]="getOffset(24, hourFraction)" />
+      </svg>
+      <div class="label">Horas</div>
+      <div class="controls">
+        <button (click)="incrementTime('hour')">+ Hora</button>
+        <button (click)="decrementTime('hour')">- Hora</button>
+      </div>
+    </div>
+  
+    <div class="circle-container">
+      <svg class="circle" viewBox="0 0 100 100">
+        <circle class="circle-background" cx="50" cy="50" r="45" />
+        <circle class="circle-progress" cx="50" cy="50" r="45" [style.strokeDashoffset]="getOffset(60, minuteFraction)" />
+      </svg>
+      <div class="label">Minutos</div>
+      <div class="controls">
+        <button (click)="incrementTime('minute')">+ Minuto</button>
+        <button (click)="decrementTime('minute')">- Minuto</button>
+      </div>
+    </div>
+  
+    <div class="circle-container">
+      <svg class="circle" viewBox="0 0 100 100">
+        <circle class="circle-background" cx="50" cy="50" r="45" />
+        <circle class="circle-progress" cx="50" cy="50" r="45" [style.strokeDashoffset]="getOffset(60, secondFraction)" />
+      </svg>
+      <div class="label">Segundos</div>
+      <div class="controls">
+        <button (click)="incrementTime('second')">+ Segundo</button>
+        <button (click)="decrementTime('second')">- Segundo</button>
+      </div>
+    </div>
+  </div>
+  

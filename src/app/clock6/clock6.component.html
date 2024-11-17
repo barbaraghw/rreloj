@@ -1,1 +1,24 @@
-<p>clock6 works!</p>
+<div class="clock6-wrapper">
+
+    <div class="clock-face">
+
+      <div class="hour-hand" [ngStyle]="{transform: 'rotate(' + hourDegree + 'deg)'}"></div>
+      <div class="minute-hand" [ngStyle]="{transform: 'rotate(' + minuteDegree + 'deg)'}"></div>
+      <div class="second-hand" [ngStyle]="{transform: 'rotate(' + secondDegree + 'deg)'}"></div>
+  
+      <div class="center-point"></div>
+    </div>
+  
+    <div class="clock-display">
+      {{ currentTime | date: 'HH:mm:ss' }}
+    </div>
+    <div class="controls">
+      <button (click)="modifyTime('hours', 1)">Aumentar Hora</button>
+      <button (click)="modifyTime('hours', -1)">Disminuir Hora</button>
+      <button (click)="modifyTime('minutes', 1)">Aumentar Minuto</button>
+      <button (click)="modifyTime('minutes', -1)">Disminuir Minuto</button>
+      <button (click)="modifyTime('seconds', 1)">Aumentar Segundo</button>
+      <button (click)="modifyTime('seconds', -1)">Disminuir Segundo</button>
+    </div>
+  </div>
+  

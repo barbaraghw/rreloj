@@ -1,0 +1,75 @@
+.clock-containerr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .time-display {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg); 
+  }
+  
+  .circle-background {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+  }
+  
+  .circle-progress {
+    fill: none;
+    stroke: #0f0;
+    stroke-width: 10;
+    stroke-dasharray: 282.74; 
+    stroke-dashoffset: 282.74; 
+    transition: stroke-dashoffset 1s;
+  }
+  
+  .label {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 0 0 20px 5px #0f0;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px 5px #0f0;
+  }
+  
